@@ -148,7 +148,7 @@ body {
 h1 {
   text-align: center;
   font-size: 36px;
-  margin-bottom: 48px;
+  margin-bottom: 24px;
 }
 
 .container {
@@ -164,19 +164,47 @@ h1 {
 
 .calendar {
   width: 300px;
-  height: 200px;
+  height: 250px;
   background-color: #fff;
   box-shadow: 0 3px 10px rgba(0 0 0 /0.2);
+  padding: 16px;
 }
 
 .year-month-area {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  margin-bottom: 16px;
+}
+
+.year-month-time {
+  display: flex;
   gap: 10px;
-  padding: 5px 0;
 }
 
 .fa-solid {
+  cursor: pointer;
+}
+
+.days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.holiday {
+  color: #f00;
+}
+
+.target-dates {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  row-gap: 16px;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.date {
   cursor: pointer;
 }
