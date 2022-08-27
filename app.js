@@ -3,6 +3,7 @@ const targetYear = document.querySelector(".target-year");
 const targetMonth = document.querySelector(".target-month");
 const targetDates = document.querySelector(".target-dates");
 const yearMonthArea = document.querySelector(".year-month-area");
+const calendar = document.querySelector(".calendar");
 
 const months = [
   "Jan",
@@ -24,6 +25,10 @@ let year = date.getFullYear();
 let month = date.getMonth();
 
 yearMonthArea.addEventListener("click", changeMonth);
+targetDates.addEventListener("click", pickDate);
+input.addEventListener("click", () => {
+  calendar.classList.add("visible");
+});
 
 function changeMonth(e) {
   const behavior = e.target.getAttribute("class");
@@ -55,6 +60,13 @@ function calcDates() {
   } else {
     return 31;
   }
+}
+
+function pickDate(e) {
+  if (e.target.nodeName !== "SPAN") return;
+  const pickedDate = `${year}/${month}/${e.target.innerText}`;
+  input.value = pickedDate;
+  calendar.classList.remove("visible");
 }
 
 function getFirstDayOfMonth(year, month) {

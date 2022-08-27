@@ -160,9 +160,11 @@ h1 {
 
 .date-picker {
   margin-bottom: 8px;
+  padding: 5px;
 }
 
 .calendar {
+  visibility: hidden;
   width: 300px;
   height: 290px;
   background-color: #fff;
@@ -184,6 +186,12 @@ h1 {
 
 .fa-solid {
   cursor: pointer;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.fa-solid:hover {
+  background-color: #eee;
 }
 
 .days {
@@ -208,6 +216,11 @@ h1 {
   padding-top: 8px;
   padding-bottom: 8px;
   cursor: pointer;
+}
+
+.date:hover {
+  background-color: #eee;
+  border-radius: 50%;
 }
 
 .day-start-1 {
@@ -236,4 +249,8 @@ h1 {
 
 .day-start-7 {
   grid-column-start: 1;
+}
+
+.visible {
+  visibility: visible;
 }
