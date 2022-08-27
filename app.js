@@ -33,8 +33,10 @@ function changeMonth(e) {
   }
   if (month > 11) {
     month = 0;
+    year += 1;
   } else if (month < 0) {
     month = 11;
+    year -= 1;
   }
   render();
 }
