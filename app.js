@@ -57,11 +57,16 @@ function calcDates() {
   }
 }
 
+function getFirstDayOfMonth(year, month) {
+  return new Date(year, month, 1).getDay();
+}
+
 function render() {
   targetYear.textContent = year;
   targetMonth.textContent = months[month];
-  let dates = ``;
-  for (let i = 0; i < calcDates(); i++) {
+  const firstDay = getFirstDayOfMonth(year, month);
+  let dates = `<span class="date day-start-${firstDay}">1</span>`;
+  for (let i = 1; i < calcDates(); i++) {
     dates += `<span class="date">${i + 1}</span>`;
   }
   targetDates.innerHTML = dates;
